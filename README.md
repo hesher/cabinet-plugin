@@ -13,7 +13,7 @@ Full plugin docs: [cabinet/README.md](cabinet/README.md).
 In Claude Code:
 
 ```
-/plugin marketplace add OWNER/cabinet-plugin
+/plugin marketplace add hesher/cabinet-plugin
 /plugin install cabinet@cabinet
 ```
 

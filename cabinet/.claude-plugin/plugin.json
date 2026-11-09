@@ -1,0 +1,18 @@
+{
+  "name": "cabinet",
+  "version": "1.1.0",
+  "description": "A persistent, role-based team of eight specialists with per-role memory that compounds across sessions. Adds /cabinet, /cabinet-ensure and /cabinet:process skills plus /cabinet commit; installs SessionStart, Stop, and PostToolUse hooks that load memory, enforce evidence capture, and lint raw entries.",
+  "author": {
+    "name": "Ben Katz"
+  },
+  "license": "MIT",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/cabinet-sonnet-low.md",
+    "./agents/cabinet-sonnet-medium.md",
+    "./agents/cabinet-opus-high.md",
+    "./agents/cabinet-opus-max.md"
+  ]
+}

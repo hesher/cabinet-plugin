@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Fake `codex` for the villain-bridge suite: prints a review with a
+# COUNTS line to the -o file. Honors CODE_X_EMPTY=1 (empty output) and
+# CODEX_EXIT=N (nonzero exit). (Fixture; chmod +x after copying.)
+# shellcheck disable=SC2148
+OUT=""
+PREV=""
+for _A in "$@"; do
+  if [ "$PREV" = "-o" ]; then OUT="$_A"; fi
+  if [ "$PREV" = "-m" ]; then MODEL_SEEN="$_A"; fi
+  PREV="$_A"
+done
+if [ -n "${CODEX_EXIT:-}" ]; then
+  echo "fake codex exploded" >&2
+  exit "$CODEX_EXIT"
+fi
+if [ "${FAKE_CODEX_EMPTY:-0}" = "1" ]; then
+  : > "$OUT"
+else
+  cat > "$OUT" <<'REVIEW'
+# Villain review (fake codex)
+
+The proposal ships its happy path but never names the rollback.
+
+COUNTS: fatal=1
+REVIEW
+fi
+exit 0

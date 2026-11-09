@@ -1,0 +1,15 @@
+{
+  "name": "cabinet",
+  "description": "Cabinet: a persistent team of specialist roles with per-role memory for Claude Code.",
+  "owner": {
+    "name": "Ben Katz"
+  },
+  "plugins": [
+    {
+      "name": "cabinet",
+      "source": "./cabinet",
+      "description": "A persistent, role-based team of eight specialists with per-role memory that compounds across sessions. Adds /cabinet, /cabinet-ensure and /cabinet:process skills plus /cabinet commit; installs SessionStart, Stop, and PostToolUse hooks that load memory, enforce evidence capture, and lint raw entries.",
+      "version": "1.1.0"
+    }
+  ]
+}

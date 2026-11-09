@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Fake `timeout` for the villain-bridge suite (this Mac has neither
+# timeout nor gtimeout): drop the duration arg and exec the rest.
+# shellcheck disable=SC2148
+shift
+exec "$@"
